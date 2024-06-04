@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Tabs</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #ddd;
+            border-radius: 10px 10px 0 0;
+            border: 1px solid #ccc;
+        }
+        .tab.active {
+            background-color: #3366cc;
+            color: white;
+            border-bottom: none;
+        }
+        .menu {
+            display: none;
+            background: white;
+            padding: 20px;
+            border-radius: 0 10px 10px 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .menu.active {
+            display: block;
+        }
+        h1 {
+            text-align: center;
+            color: #3366cc;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 18px;
+            color: #3366cc;
+            margin-bottom: 10px;
+        }
+        .menu-item {
+            margin-bottom: 10px;
+        }
+        .menu-item p {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+    </style>
+    <script>
+        function showMenu(menuId) {
+            var menus = document.querySelectorAll('.menu');
+            var tabs = document.querySelectorAll('.tab');
+            menus.forEach(function(menu) {
+                menu.classList.remove('active');
+            });
+            tabs.forEach(function(tab) {
+                tab.classList.remove('active');
+            });
+            document.getElementById(menuId).classList.add('active');
+            document.querySelector('[onclick="showMenu(\'' + menuId + '\')"]').classList.add('active');
+        }
+    </script>
+</head>
+<body>
+    <div class="tabs">
+        <div class="tab active" onclick="showMenu('mocktails')">Mocktails</div>
+        <div class="tab" onclick="showMenu('cocktails')">Cocktails</div>
+        <div class="tab" onclick="showMenu('bobatea')">Boba Tea</div>
+    </div>
+    
+    <div id="mocktails" class="menu active">
+        <h1>Mocktails</h1>
+        <div class="menu-section">
+            <h2>Cosmopolitan</h2>
+            <div class="menu-item">
+                <p>350ML: ₵30.00 | 500ML: ₵40.00</p>
+                <p>A classic and sophisticated mocktail combining vodka, cranberry juice, lime juice, and orange juice.</p>
+            </div>
+        </div>
+        <div class="menu-section">
+            <h2>Virgin Mojito</h2>
+            <div class="menu-item">
+                <p>350ML: ₵30.00 | 500ML: ₵40.00</p>
+                <p>A refreshing blend of mint, crushed mint leaves, lime juice, simple syrup, soda water, and a perfect balance of sweetness and citrus.</p>
+            </div>
+        </div>
+        <div class="menu-section">
+            <h2>Blue Lagoon</h2>
+            <div class="menu-item">
+                <p>350ML: ₵30.00 | 500ML: ₵40.00</p>
+                <p>A cooling mocktail featuring Fanta, Sprite, Cucumber, lemonade, and a splash of grenadine, creating a beautiful tasty drink.</p>
+            </div>
+        </div>
+        <div class="menu-section">
+            <h2>Lemon Ice Tea</h2>
+            <div class="menu-item">
+                <p>350ML: ₵30.00 | 500ML: ₵40.00</p>
+                <p>A refreshing iced tea made with tea, lemon, simple syrup, and a hint of lemon flavor.</p>
+            </div>
+        </div>
+        <div class="menu-section">
+            <h2>Vanilla Mint Cream</h2>
+            <div class="menu-item">
+                <p>350ML: ₵30.00 | 500ML: ₵40.00</p>
+                <p>A creamy mocktail made with mint leaves, vanilla ice cream, mint gel, and simple syrup.</p>
+            </div>
+        </div>
+        <div class="menu-section">
+            <h2>Virgin Pina Colada</h2>
+            <div class="menu-item">
+                <p>350ML: ₵30.00 | 500ML: ₵40.00</p>
+                <p>An exotic blend of pineapple juice, coconut milk, soda water, pineapple slices, and a splash of coconut syrup, resulting in a fruity and balanced mocktail.</p>
+            </div>
+        </div>
+        <div class="menu-section">
+            <h2>Safe Sex on the Beach</h2>
+            <div class="menu-item">
+                <p>350ML: ₵30.00 | 500ML: ₵40.00</p>
+                <p>A classic favorite, the Safe Sex on the Beach combines cranberry juice, orange juice, grenadine syrup, and orange slices, resulting in a tasty and satisfying drink.</p>
+            </div>
+        </div>
+        <div class="menu-section">
+            <h2>Passion World</h2>
+            <div class="menu-item">
+                <p>350ML: ₵30.00 | 500ML: ₵40.00</p>
+                <p>Made with mango juice, and passion syrup, pineapple juice, and soda water. The Passion World offers a smooth and refreshing drink with a perfect blend of sweet and passion notes.</p>
+            </div>
+        </div>
+        <div class="menu-section">
+            <h2>Fruity Blast</h2>
+            <div class="menu-item">
+                <p>350ML: ₵30.00 | 500ML: ₵40.00</p>
+                <p>A fruity mocktail made with pineapple juice, pineapple juice, strawberry syrup, orange slices, and grenadine syrup, resulting in a delicious and tropical drink.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="cocktails" class="menu">
+        <h1>Cocktails</h1>
+        <div class="menu-section">
+            <div class="menu-item">
+                <p>Cosmopolitan - 350ML: ₵30.00 | 500ML: ₵40.00</p>
+                <p>Classic Mojito - 350ML: ₵30.00 | 500ML: ₵40.00</p>
+                <p>Blue Lagoon - 350ML: ₵30.00 | 500ML: ₵40.00</p>
+                <p>Screw Driver - 350ML: ₵30.00 | 500ML: ₵40.00</p>
+                <p>Vanilla Mint Cream - 350ML: ₵30.00 | 500ML: ₵40.00</p>
+                <p>Pina Colada - 350ML: ₵30.00 | 500ML: ₵40.00</p>
+                <p>Sex on the Beach - 350ML: ₵30.00 | 500ML: ₵40.00</p>
+                <p>Passion World - 350ML: ₵30.00 | 500ML: ₵40.00</p>
+                <p>Long Island - 350ML: ₵30.00 | 500ML: ₵40.00</p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="bobatea" class="menu">
+        <h1>Boba Tea</h1>
+        <div class="menu-section">
+            <h2>Milk Tea</h2>
+            <div class="menu-item">
+                <p>Strawberry Milk Tea - 500ML: ₵40.00 | 700ML: ₵50.00</p>
+                <p>Taro Milk Tea - 500ML: ₵40.00 | 700ML: ₵50.00</p>
+                <p>Vanilla Milk Tea - 500ML: ₵40.00 | 700ML: ₵50.00</p>
+                <p>Caramel Milk Tea - 500ML: ₵40.00 | 700ML: ₵50.00</p>
+                <p>Chocolate Milk Tea - 500ML: ₵40.00 | 700ML: ₵50.00</p>
+                <p>Coconut Milk Tea - 500ML: ₵40.00 | 700ML: ₵50.00</p>
+                <p>2-in-1 Combo Milk Tea - 500ML: ₵45.00 | 700ML: ₵60.00</p>
+                <p>3-in-1 Combo Milk Tea - 500ML: ₵50.00 | 700ML: ₵60.00</p>
+            </div>
+        </div>
+        <div class="menu-section">
+            <h2>Fruit Tea</h2>
+            <div class="menu-item">
+                <p>Mango Fruit Tea - 500ML: ₵40.00 | 700ML: ₵50.00</p>
+                <p>Strawberry Fruit Tea - 500ML: ₵40.00 | 700ML: ₵50.00</p>
+                <p>Orange Fruit Tea - 500ML: ₵40.00 | 700ML: ₵50.00</p>
+                <p>Lychee Fruit Tea - 500ML: ₵40.00 | 700ML: ₵50.00</p>
+                <p>Passion Fruit Tea - 500ML: ₵40.00 | 700ML: ₵50.00</p>
+                <p>Apple Fruit Tea - 500ML: ₵40.00 | 700ML: ₵50.00</p>
+                <p>Peach Fruit Tea - 500ML: ₵40.00 | 700ML: ₵50.00</p>
+                <p>Kiwi Fruit Tea - 500ML: ₵40.00 | 700ML: ₵50.00</p>
+            </div>
+        </div>
+        <div class="menu-section">
+            <h2>Specialty Drinks</h2>
+            <div class="menu-item">
+                <p>Taro Coconut Delight - 500ML: ₵45.00 | 700ML: ₵60.00</p>
+                <p>Mango Tango - 500ML: ₵45.00 | 700ML: ₵60.00</p>
+                <p>Berry Blast - 500ML: ₵45.00 | 700ML: ₵60.00</p>
+                <p>Green Matcha - 500ML: ₵45.00 | 700ML: ₵60.00</p>
+                <p>Hawaiian Sunset - 500ML: ₵45.00 | 700ML: ₵60.00</p>
+                <p>Pearl Milk Tea - 500ML: ₵45.00 | 700ML: ₵60.00</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
